@@ -6,32 +6,29 @@
 | file | description |
 | --- | --- |
 | `babi_loader.py` | declaration of bAbI Pytorch Dataset class |
-| `babi_main.py` | contains DMN+ model and training code |
-| `fetch_data.sh` | shell script to fetch bAbI tasks (from [DMNs in Theano](https://github.com/YerevaNN/Dynamic-memory-networks-in-Theano)) |
+| `dmn_plus.py` | contains DMN+ model and training code |
+| `Code_step_by_step.ipynb` | explains each module with good demostration for each module |
+| `Project_DemoFinal.ipynb` | Demo using pretainedmodels, shows how attention is getting shifted |
+| `get_data.sh` | shell script to fetch bAbI tasks  |
 
-## Usage
-Install [Pytorch v0.1.12](http://pytorch.org/) and [Python 3.6.x](https://www.python.org/downloads/) (for [Literal String Interpolation](https://www.python.org/dev/peps/pep-0498/))
-
+## Downloading Data
 Run the included shell script to fetch the data  
 
-    chmod +x fetch_data.sh
+    chmod +x get_data.sh
     ./fetch_data.sh
 
-Run the main python code
+## Understaning code
+Code_step_by_step.ipynb is specially made to understand code step by step.
 
-    python babi_main.py
+## Training Model
+Run dmn_plus.py to train model 
 
-## Benchmarks
+    python dmn_plus.py
+ 
 
-Low accuracies compared to Xiong et al's are may due to different weight decay setting or the model's instability.
+## Using Pretrained model
+Run Project_DemoFinal.ipynb to use pretrained model
 
-> On some tasks, the accuracy was not stable across multiple
-runs. This was particularly problematic on QA3, QA17,
-and QA18. To solve this, we repeated training 10 times
-using random initializations and evaluated the model that
-achieved the lowest validation set loss.
-
-You can find pretrained models [here](https://github.com/dandelin/Dynamic-memory-networks-plus-Pytorch/tree/master/pretrained_models)
 
 | Task ID | This Repo | Xiong et al |
 | :---: | :---: | :---: |
