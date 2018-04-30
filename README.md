@@ -15,7 +15,7 @@
 Run the included shell script to fetch the data  
 
     chmod +x get_data.sh
-    ./fetch_data.sh
+    ./get_data.sh
 
 ## Understaning code
 Code_step_by_step.ipynb is specially made to understand code step by step.
